@@ -1,6 +1,6 @@
 // Userが変更された際の処理
 import { useEffect } from 'react'
-import firebase from '../firebase.config'
+import firebase from '../firebaseConfig'
 import { useRouter } from 'next/router'
 import Cookie from 'universal-cookie'
 
