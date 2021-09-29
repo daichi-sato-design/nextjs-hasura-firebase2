@@ -1,8 +1,10 @@
 import '../styles/globals.css'
 
 import { AppProps } from 'next/app'
+import { useUserChanged } from '../hooks/useUserChanged'
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const {} = useUserChanged()
   return <Component {...pageProps} />
 }
 
