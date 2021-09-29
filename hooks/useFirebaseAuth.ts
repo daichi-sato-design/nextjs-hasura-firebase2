@@ -1,7 +1,7 @@
 import { useState, useCallback, ChangeEvent, FormEvent } from 'react'
 import firebase from '../firebaseConfig'
 
-export const useFirebase = () => {
+export const useFirebaseAuth = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [isLogin, setIsLogin] = useState(true)
@@ -36,9 +36,11 @@ export const useFirebase = () => {
       } else {
         try {
           await firebase.auth().createUserWithEmailAndPassword(email, password)
+          await firebase.auth().currentUser.sendEmailVerification()
         } catch (e) {
           alert(e)
         }
+        resetInput()
       }
     },
     [email, password, isLogin]
