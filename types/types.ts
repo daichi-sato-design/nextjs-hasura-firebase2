@@ -1,6 +1,6 @@
 export interface News {
   id: string
-  contents: string
+  content: string
   created_at: string
 }
 
