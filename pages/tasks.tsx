@@ -6,6 +6,9 @@ import { Layout } from '../components/Layout'
 import { ChevronDoubleLeftIcon, LogoutIcon } from '@heroicons/react/solid'
 import firebase from '../firebaseConfig'
 import { NewsListMemo } from '../components/NewsList'
+import { NewsEditMemo } from '../components/NewsEdit'
+import { TaskListMemo } from '../components/TaskList'
+import { TaskEditMemo } from '../components/TaskEdit'
 
 const Tasks: VFC = () => {
   const router = useRouter()
@@ -30,7 +33,16 @@ const Tasks: VFC = () => {
       />
 
       <p className="mt-10 mb-5 text-blue-500 text-xl font-bold">News Edit</p>
-      <NewsListMemo />
+      <div className="grid grid-cols-2 gap-40">
+        <NewsListMemo />
+        <NewsEditMemo />
+      </div>
+
+      <p className="mt-10 mb-5 text-blue-500 text-xl font-bold">Task Edit</p>
+      <div className="grid grid-cols-2 gap-40">
+        <TaskListMemo />
+        <TaskEditMemo />
+      </div>
 
       <Link href="/">
         <div className="mt-20 flex items-center cursor-pointer">
